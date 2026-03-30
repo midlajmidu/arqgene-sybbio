@@ -564,10 +564,46 @@ CORE_METABOLISM_MAP = {
     "alcohol dehydrogenase": (["1.1.1.1"], "Alcohol dehydrogenase"),
     "lactate dehydrogenase": (["1.1.1.27"], "Lactate dehydrogenase"),
     
-    # Common bacterial markers
+    # Common bacterial markers & energy
     "atp synthase": (["7.1.2.2"], "ATP synthase"),
     "rna polymerase": (["2.7.7.6"], "DNA-directed RNA polymerase"),
     "dna polymerase": (["2.7.7.7"], "DNA polymerase"),
+    "inorganic pyrophosphatase": (["3.6.1.1"], "Inorganic pyrophosphatase"),
+    "atp adenylyltransferase": (["2.7.7.2"], "FAD synthetase"),
+    
+    # Cofactors & Carriers
+    "biotin carboxylase": (["6.3.4.14"], "Biotin carboxylase"),
+    "thioredoxin reductase": (["1.8.1.9"], "Thioredoxin-disulfide reductase"),
+    "ferredoxin-nadp reductase": (["1.18.1.2"], "Ferredoxin-NADP+ reductase"),
+    
+    # Nucleotides
+    "ribonucleoside-diphosphate reductase": (["1.17.4.1"], "Ribonucleoside-diphosphate reductase"),
+    "thymidylate synthase": (["2.1.1.45"], "Thymidylate synthase"),
+    "uracil phosphoribosyltransferase": (["2.4.2.9"], "Uracil phosphoribosyltransferase"),
+    "adenine phosphoribosyltransferase": (["2.4.2.7"], "Adenine phosphoribosyltransferase"),
+    "hypoxanthine phosphoribosyltransferase": (["2.4.2.8"], "Hypoxanthine phosphoribosyltransferase"),
+    
+    # Translation
+    "methionyl-trna synthetase": (["6.1.1.10"], "Methionyl-tRNA synthetase"),
+    "alanyl-trna synthetase": (["6.1.1.7"], "Alanyl-tRNA synthetase"),
+    "arginyl-trna synthetase": (["6.1.1.19"], "Arginyl-tRNA synthetase"),
+    "asparaginyl-trna synthetase": (["6.1.1.22"], "Asparaginyl-tRNA synthetase"),
+    "aspartyl-trna synthetase": (["6.1.1.12"], "Aspartyl-tRNA synthetase"),
+    "cysteinyl-trna synthetase": (["6.1.1.16"], "Cysteinyl-tRNA synthetase"),
+    "glutaminyl-trna synthetase": (["6.1.1.18"], "Glutaminyl-tRNA synthetase"),
+    "glutamyl-trna synthetase": (["6.1.1.17"], "Glutamyl-tRNA synthetase"),
+    "glycyl-trna synthetase": (["6.1.1.14"], "Glycyl-tRNA synthetase"),
+    "histidyl-trna synthetase": (["6.1.1.21"], "Histidyl-tRNA synthetase"),
+    "isoleucyl-trna synthetase": (["6.1.1.5"], "Isoleucyl-tRNA synthetase"),
+    "leucyl-trna synthetase": (["6.1.1.4"], "Leucyl-tRNA synthetase"),
+    "lysyl-trna synthetase": (["6.1.1.6"], "Lysyl-tRNA synthetase"),
+    "phenylalanyl-trna synthetase": (["6.1.1.20"], "Phenylalanyl-tRNA synthetase"),
+    "prolyl-trna synthetase": (["6.1.1.15"], "Prolyl-tRNA synthetase"),
+    "seryl-trna synthetase": (["6.1.1.11"], "Seryl-tRNA synthetase"),
+    "threonyl-trna synthetase": (["6.1.1.3"], "Threonyl-tRNA synthetase"),
+    "tryptophanyl-trna synthetase": (["6.1.1.2"], "Tryptophanyl-tRNA synthetase"),
+    "tyrosyl-trna synthetase": (["6.1.1.1"], "Tyrosyl-tRNA synthetase"),
+    "valyl-trna synthetase": (["6.1.1.9"], "Valyl-tRNA synthetase"),
 }
 
 def _search_kegg_enzyme(keyword: str) -> tuple:

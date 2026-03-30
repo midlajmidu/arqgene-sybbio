@@ -107,11 +107,15 @@ def get_job_store() -> GenomeJobStore:
 # Pipeline execution
 # =====================================================================
 
+# Default path for the DIAMOND database (UniProt/SwissProt enzymes)
+DEFAULT_DIAMOND_DB = os.path.abspath("data/reference/reference_db.dmnd")
+
+
 def start_genome_reconstruction(
     file_bytes: bytes,
     filename: str,
     solver: str = "glpk",
-    diamond_db_path: Optional[str] = None,
+    diamond_db_path: Optional[str] = DEFAULT_DIAMOND_DB,
 ) -> str:
     """
     Start an async genome reconstruction job.
