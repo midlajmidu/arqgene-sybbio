@@ -48,13 +48,14 @@ pip install -r requirements.txt
 ```
 
 ### 2️⃣ Run the Backend (FastAPI)
-The backend handles all heavy computation and model registry.
+The backend handles all heavy computation, model registry, and **DIAMOND-based genome annotation** (integrated with a 44k curated enzyme database).
 
 ```bash
 # In Terminal A
-uvicorn backend.main:app --port 8000 --reload
+# Ensure DIAMOND is installed (brew install diamond)
+uvicorn backend.main:app --port 8001 --reload
 ```
-*API docs at `http://localhost:8000/docs`*
+*API docs at `http://localhost:8001/docs`*
 
 ### 3️⃣ Run the Frontend (Streamlit)
 The frontend provides the interactive dashboard for simulation and design.
