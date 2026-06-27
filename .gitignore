@@ -51,4 +51,4 @@ synb_genome_*
 *.faa
 create
 syn
-utils/
+backend.log

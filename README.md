@@ -31,40 +31,65 @@ The "Genetic Engineering Suggester" uses a greedy LP heuristic to find the combi
 
 ## 🚀 Getting Started
 
-### 1️⃣ Clone and Setup
-Ensure you have Python 3.9+ installed and a virtual environment active.
+### 🔌 Prerequisites
+Before starting, ensure you have:
+*   **Python 3.9+** installed.
+*   *(Optional)* **DIAMOND** sequence alignment tool (`brew install diamond` or download binary) for local DIAMOND-based genome annotation.
+
+---
+
+### ⚡ Option A: All-in-One Automated Startup (Recommended)
+
+We have provided a comprehensive bash script that automates the virtual environment creation, dependency installation, and launches both services concurrently. It also handles graceful cleanup of all processes on exit.
 
 ```bash
-# Clone the repository
-git clone https://github.com/[username]/synb.git
-cd synb
+# 1. Run the script from the root directory
+./run_project.sh
 
-# Initialize virtual environment
-python -m venv venv
-source venv/bin/activate  # macOS/Linux
+# 2. Open your browser to the Streamlit Dashboard:
+# http://localhost:8501
+```
 
-# Install dependencies
+---
+
+### 🛠️ Option B: Manual Setup (Separate Terminals)
+
+If you prefer to manage the virtual environment and logs manually:
+
+#### 1️⃣ Environment Setup
+Create a virtual environment and install all python dependencies:
+
+```bash
+# Create a virtual environment
+python3 -m venv .venv
+
+# Activate the virtual environment
+source .venv/bin/activate  # macOS/Linux
+# or: .venv\Scripts\activate on Windows
+
+# Install the required packages
+pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-### 2️⃣ Run the Backend (FastAPI)
-The backend handles all heavy computation, model registry, and **DIAMOND-based genome annotation** (integrated with a 44k curated enzyme database).
+#### 2️⃣ Run the Backend (FastAPI)
+The backend manages model computation, parsing, and execution. Note that the Streamlit frontend expects the backend to run on port **8001**.
 
 ```bash
-# In Terminal A
-# Ensure DIAMOND is installed (brew install diamond)
+# In Terminal A (with virtual env activated)
 uvicorn backend.main:app --port 8001 --reload
 ```
-*API docs at `http://localhost:8001/docs`*
+*   **API Docs (Swagger UI):** [http://localhost:8001/docs](http://localhost:8001/docs)
+*   **Health Check:** [http://localhost:8001/api/v1/health](http://localhost:8001/api/v1/health)
 
-### 3️⃣ Run the Frontend (Streamlit)
-The frontend provides the interactive dashboard for simulation and design.
+#### 3️⃣ Run the Frontend (Streamlit)
+The Streamlit frontend provides the user interface for loading models, configuring the media, running FBA simulations, and analyzing outcomes.
 
 ```bash
-# In Terminal B
+# In Terminal B (with virtual env activated)
 streamlit run app.py
 ```
-*Dashboard at `http://localhost:8501`*
+*   **Streamlit UI:** [http://localhost:8501](http://localhost:8501)
 
 ---
 
